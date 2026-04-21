@@ -1,1 +1,365 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Computing & Containerization Syllabus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .gradient-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .unit-badge {
+            background: #dbeafe;
+            color: #1e40af;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .resource-link:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .resource-link.video { color: #dc2626; border-color: #fecaca; }
+        .resource-link.notes { color: #2563eb; border-color: #bfdbfe; }
+        .resource-link.tool { color: #059669; border-color: #a7f3d0; }
+
+        section { scroll-margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="gradient-header text-white py-12 px-6 shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Cloud Computing & Containerization</h1>
+            <p class="text-blue-100 text-lg md:text-xl max-w-3xl leading-relaxed">
+                Comprehensive guide to Cloud Architectures, Virtualization technologies, 
+                and Modern Container Orchestration using Docker and Kubernetes.
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap gap-6 justify-center md:justify-start">
+            <a href="#syllabus" class="font-semibold text-slate-600 hover:text-blue-600">Syllabus</a>
+            <a href="#objectives" class="font-semibold text-slate-600 hover:text-blue-600">Objectives</a>
+            <a href="#tools" class="font-semibold text-slate-600 hover:text-blue-600">Tools & Environment</a>
+            <a href="#resources" class="font-semibold text-slate-600 hover:text-blue-600">Resources</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-6 space-y-16">
+
+        <!-- Syllabus Grid -->
+        <section id="syllabus">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-2 h-8 bg-blue-600 rounded-full"></span>
+                Course Curriculum
+            </h2>
+            
+            <div class="space-y-6">
+                
+                <!-- Unit 01 -->
+                <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <span class="unit-badge">Module 01</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">Virtual Machine Introduction</h3>
+                            <p class="text-slate-600 mb-4">Core concepts of hardware virtualization, IaaS, and comparing Traditional vs. Cloud Architectures.</p>
+                            <div class="flex flex-wrap">
+                                <a href="#" class="resource-link notes">Lecture Notes</a>
+                                <a href="#" class="resource-link video">Video Lecture</a>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg md:w-80 border border-slate-100">
+                            <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Key Topics</h4>
+                            <ul class="text-sm space-y-1 text-slate-700">
+                                <li>• Traditional vs Cloud IT Architecture</li>
+                                <li>• IaaS, PaaS, SaaS Service Models</li>
+                                <li>• Full Clone vs Linked Clone VMs</li>
+                                <li>• Thick vs Thin Disk Provisioning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 02 -->
+                <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <span class="unit-badge">Module 02</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">Container Fundamentals (Docker)</h3>
+                            <p class="text-slate-600 mb-4">Deep dive into container runtimes, image building, volumes, and multi-container orchestration.</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mt-4">
+                                <div class="border-l-2 border-blue-200 pl-4">
+                                    <h5 class="text-sm font-bold text-slate-800">L1: Basics & Architecture</h5>
+                                    <div class="mt-2 flex flex-wrap">
+                                        <a href="#" class="resource-link notes text-xs">Notes 1</a>
+                                        <a href="#" class="resource-link notes text-xs">Notes 2</a>
+                                        <a href="#" class="resource-link tool text-xs">Ex1</a>
+                                        <a href="#" class="resource-link video text-xs">Video</a>
+                                    </div>
+                                </div>
+                                <div class="border-l-2 border-blue-200 pl-4">
+                                    <h5 class="text-sm font-bold text-slate-800">L2: Operations & Images</h5>
+                                    <div class="mt-2 flex flex-wrap">
+                                        <a href="#" class="resource-link notes text-xs">L2.txt</a>
+                                        <a href="#" class="resource-link video text-xs">Video</a>
+                                    </div>
+                                </div>
+                                <div class="border-l-2 border-blue-200 pl-4">
+                                    <h5 class="text-sm font-bold text-slate-800">L3: Volumes & Storage</h5>
+                                    <div class="mt-2 flex flex-wrap">
+                                        <a href="#" class="resource-link notes text-xs">L3.txt</a>
+                                        <a href="#" class="resource-link tool text-xs">Ex2-4</a>
+                                        <a href="#" class="resource-link video text-xs">Video</a>
+                                    </div>
+                                </div>
+                                <div class="border-l-2 border-blue-200 pl-4">
+                                    <h5 class="text-sm font-bold text-slate-800">L4: Docker Compose <span class="text-red-500 font-normal">(Quiz 1)</span></h5>
+                                    <div class="mt-2 flex flex-wrap">
+                                        <a href="#" class="resource-link notes text-xs">L4.txt</a>
+                                        <a href="#" class="resource-link tool text-xs">Ex5</a>
+                                        <a href="#" class="resource-link video text-xs">Video</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 03 -->
+                <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <span class="unit-badge">Module 03</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">Container Orchestration (Kubernetes)</h3>
+                            <p class="text-slate-600 mb-4">Managing scale with K8s cluster management, config management, and deployments.</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mt-2">
+                                <div class="border-l-2 border-purple-200 pl-4">
+                                    <h5 class="text-sm font-bold text-slate-800">L1: Config & Secrets</h5>
+                                    <div class="mt-2 flex flex-wrap">
+                                        <a href="#" class="resource-link notes text-xs">Notes</a>
+                                        <a href="#" class="resource-link tool text-xs">Secrets</a>
+                                        <a href="#" class="resource-link video text-xs">Video</a>
+                                    </div>
+                                </div>
+                                <div class="border-l-2 border-purple-200 pl-4">
+                                    <h5 class="text-sm font-bold text-slate-800">L2: Deployments <span class="text-red-500 font-normal">(Quiz 2)</span></h5>
+                                    <div class="mt-2 flex flex-wrap">
+                                        <a href="#" class="resource-link notes text-xs">CLI</a>
+                                        <a href="#" class="resource-link tool text-xs">WebApp Ex</a>
+                                        <a href="#" class="resource-link video text-xs">Video</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 border-t pt-4">
+                                <h5 class="text-sm font-bold text-slate-800 mb-2">Cloud Computing Options</h5>
+                                <div class="flex flex-wrap">
+                                    <a href="#" class="resource-link notes">AWS Lambda & GCF Notes</a>
+                                    <a href="#" class="resource-link video">Lec 3 Video</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 04-06 -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+                        <span class="unit-badge">Module 04</span>
+                        <h4 class="font-bold mt-2 mb-1">Managed Services</h4>
+                        <p class="text-xs text-slate-600 mb-3">ECS/EKS on AWS & GKE on GCP platforms.</p>
+                        <a href="#" class="text-xs font-semibold text-blue-600">Lecture Notes & Video →</a>
+                    </div>
+                    <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-100">
+                        <span class="unit-badge">Module 05</span>
+                        <h4 class="font-bold mt-2 mb-1">Advanced Functions</h4>
+                        <p class="text-xs text-slate-600 mb-3">Container images as functions using Lambda with ECS.</p>
+                        <a href="#" class="text-xs font-semibold text-indigo-600">Study Materials →</a>
+                    </div>
+                    <div class="bg-slate-100 rounded-xl p-5 border border-slate-200">
+                        <span class="unit-badge">Module 06</span>
+                        <h4 class="font-bold mt-2 mb-1">Virtual Servers</h4>
+                        <p class="text-xs text-slate-600 mb-3">Deep dive into EC2 (AWS) and Compute Engine (GCP).</p>
+                        <a href="#" class="text-xs font-semibold text-slate-600">Lecture Notes & Video →</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Objectives -->
+        <section id="objectives" class="bg-slate-900 text-white rounded-2xl p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-8">Course Objectives</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-400 font-bold">✓</span>
+                        <span>Understand the fundamental shift from Traditional IT to Cloud-native architectures.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-400 font-bold">✓</span>
+                        <span>Master Docker container lifecycle: Image creation, storage management, and networking.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-400 font-bold">✓</span>
+                        <span>Deploy resilient applications using Kubernetes orchestration and deployment strategies.</span>
+                    </li>
+                </ul>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-400 font-bold">✓</span>
+                        <span>Compare serverless computing options (Lambda/GCF) vs managed container services (ECS/EKS).</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-400 font-bold">✓</span>
+                        <span>Differentiate between Virtual Machine virtualization and Container (OS-level) virtualization.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-blue-400 font-bold">✓</span>
+                        <span>Utilize Infrastructure as Code principles with Docker Compose and K8s manifests.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-2 h-8 bg-green-500 rounded-full"></span>
+                Software & Tools
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-4 border rounded-xl bg-white flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-slate-800">VMware Workstation</h4>
+                        <p class="text-xs text-slate-500">v16 / v17 / Mac versions</p>
+                    </div>
+                    <a href="#" class="mt-4 text-xs font-bold text-green-600 uppercase">Download (540MB)</a>
+                </div>
+                <div class="p-4 border rounded-xl bg-white flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-slate-800">Docker Desktop</h4>
+                        <p class="text-xs text-slate-500">Windows & Linux Kernel Update</p>
+                    </div>
+                    <a href="#" class="mt-4 text-xs font-bold text-green-600 uppercase">Download (550MB)</a>
+                </div>
+                <div class="p-4 border rounded-xl bg-white flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-slate-800">Minikube</h4>
+                        <p class="text-xs text-slate-500">Local K8s environment</p>
+                    </div>
+                    <a href="#" class="mt-4 text-xs font-bold text-green-600 uppercase">Download (35MB)</a>
+                </div>
+                <div class="p-4 border rounded-xl bg-white flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-slate-800">VS Code</h4>
+                        <p class="text-xs text-slate-500">IDE for Docker & K8s</p>
+                    </div>
+                    <a href="#" class="mt-4 text-xs font-bold text-green-600 uppercase">Download (88MB)</a>
+                </div>
+            </div>
+            
+            <div class="mt-8 p-6 bg-yellow-50 rounded-xl border border-yellow-200">
+                <h4 class="font-bold text-yellow-800 mb-2">Windows 10 Virtual Machine Package</h4>
+                <p class="text-sm text-yellow-700 mb-4">Complete pre-configured environment with Docker & Minikube (4.2GB ISO + Multi-part downloads).</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-xs font-bold px-3 py-1 bg-yellow-200 rounded">Part 1</a>
+                    <a href="#" class="text-xs font-bold px-3 py-1 bg-yellow-200 rounded">Part 2</a>
+                    <a href="#" class="text-xs font-bold px-3 py-1 bg-yellow-200 rounded">Part 3</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Resources -->
+        <section id="resources" class="pb-20">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-2 h-8 bg-slate-400 rounded-full"></span>
+                Required Reading
+            </h2>
+            <div class="bg-white rounded-xl border p-6 flex flex-col md:flex-row items-center gap-8">
+                <div class="w-32 h-44 bg-slate-200 rounded shadow-inner flex items-center justify-center text-center p-4">
+                    <span class="text-xs font-bold text-slate-400">DockerFile Reference</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Main Text Book: DockerFile Reference</h3>
+                    <p class="text-slate-600 mb-4">Essential reference for container image optimization and building best practices.</p>
+                    <a href="#" class="resource-link notes">Download PDF (9 MB)</a>
+                    <a href="#" class="resource-link notes">Online Documentation</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-100 border-t py-12 px-6 text-center text-slate-500">
+        <p>© 2024 Cloud Computing & Containerization Course Syllabus</p>
+        <p class="text-xs mt-2 italic">Designed for educational excellence and technical proficiency.</p>
+    </footer>
+
+    <script>
+        // Simple smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
